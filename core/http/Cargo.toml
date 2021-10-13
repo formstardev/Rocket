@@ -1,0 +1,37 @@
+[package]
+name = "rocket_http"
+version = "0.5.0-dev"
+authors = ["Sergio Benitez <sb@sergio.bz>"]
+description = """
+Types, traits, and parsers for HTTP requests, responses, and headers.
+"""
+documentation = "https://api.rocket.rs/v0.5/rocket_http/"
+homepage = "https://rocket.rs"
+repository = "https://github.com/SergioBenitez/Rocket"
+readme = "../../README.md"
+keywords = ["rocket", "web", "framework", "http"]
+license = "MIT OR Apache-2.0"
+categories = ["web-programming"]
+edition = "2018"
+
+[features]
+default = []
+tls = ["tokio-rustls"]
+private-cookies = ["cookie/private", "cookie/key-expansion"]
+
+[dependencies]
+smallvec = "1.0"
+percent-encoding = "1"
+hyper = { version = "=0.13.0-alpha.1", default-features = false, features = ["runtime"] }
+http = "0.1.17"
+mime = "0.3.13"
+time = "0.2.11"
+indexmap = "1.0"
+state = "0.4"
+tokio-rustls = { version = "0.10.3", optional = true }
+cookie = { version = "0.14.0", features = ["percent-encode"] }
+pear = "0.1"
+unicode-xid = "0.2"
+
+[dev-dependencies]
+rocket = { version = "0.5.0-dev", path = "../lib" }

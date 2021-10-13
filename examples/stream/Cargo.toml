@@ -1,0 +1,11 @@
+[package]
+name = "stream"
+version = "0.0.0"
+workspace = "../../"
+edition = "2018"
+publish = false
+
+[dependencies]
+rocket = { path = "../../core/lib" }
+futures-preview = "0.3.0-alpha.18"
+async-std = "0.99.4"
